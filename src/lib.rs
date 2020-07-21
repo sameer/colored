@@ -45,7 +45,7 @@ use std::{borrow::Cow, fmt, ops::Deref};
 pub use style::{Style, Styles};
 
 /// A string that may have color and/or style applied to it.
-#[derive(Clone, Debug, PartialEq, Eq)]
+#[derive(Clone, Debug, PartialEq, Eq, Default)]
 pub struct ColoredString {
     input: String,
     fgcolor: Option<Color>,
@@ -277,17 +277,6 @@ impl ColoredString {
         }
 
         input.into()
-    }
-}
-
-impl Default for ColoredString {
-    fn default() -> Self {
-        ColoredString {
-            input: String::default(),
-            fgcolor: None,
-            bgcolor: None,
-            style: style::CLEAR,
-        }
     }
 }
 

@@ -86,6 +86,12 @@ impl Styles {
     }
 }
 
+impl Default for Style {
+    fn default() -> Self {
+        Self(Styles::Clear.to_u8())
+    }
+}
+
 impl Style {
     /// Check if the current style has one of [`Styles`](Styles) switched on.
     ///
